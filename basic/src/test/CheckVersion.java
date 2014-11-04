@@ -1,3 +1,5 @@
+package test;
+
 import java.sql.*;
 
 /**
@@ -41,4 +43,36 @@ public class CheckVersion {
         }
     }
 
+    public static String getMessage() {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT VERSION()");
+
+            if (resultSet.next()) {
+                return(resultSet.getString(1));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return "Oops! ";
+    }
 }

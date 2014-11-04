@@ -1,3 +1,4 @@
+<%@ page import="test.CheckVersion" %>
 <%--
   Created by IntelliJ IDEA.
   User: Yang ZHANG
@@ -48,7 +49,48 @@
 
     <script src="js/libs/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
-
+<body id="home">
+<nav id="navbar-main-nav" class="navbar">
+    <div class="row">
+        <a class="toggle" gumby-trigger="#navbar-main-nav #main-nav" href="#"><i class="icon-menu"></i></a>
+        <h1 class="four columns logo">
+            <%--<a href="/">
+                <img src="img/SJTU-white.png" gumby-retina="">
+                <span>Team</span>
+            </a>--%>
+        </h1>
+        <nav class="eight columns pull_right">
+            <ul id="main-nav">
+                <li><a href="#"><span>Features</span><i class="icon-archive" title="Features"></i></a></li>
+                <li><a href="#"><span>Examples</span><i class="icon-database" title="Examples"></i></a></li>
+                <li><a href="#"><span>About</span><i class="icon-users" title="About"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="wrapper">
+    <header class="row">
+        <hgroup>
+            <h1>YAGO</h1>
+            <h4>Yet Another Great Ontology</h4>
+            <h5>Using <%=CheckVersion.getMessage()%></h5>
+        </hgroup>
+    </header>
+</div>
+<div class="wrapper">
+    <section class="row">
+        <div class="picker">
+            <select>
+                <option value="#" disabled>Query type....</option>
+                <option>ID</option>
+                <option>Subject</option>
+            </select>
+        </div>
+        <div class="field append">
+            <input class="wide input" type="text" placeholder="Search...."/>
+            <div class="medium primary btn"><a href="#">Go</a></div>
+        </div>
+    </section>
+</div>
 </body>
 </html>
