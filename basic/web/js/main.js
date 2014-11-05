@@ -29,14 +29,14 @@ $(document).ready(function() {
             e.preventDefault();
             var queryContent = $(document).find("input[name='query-content']").val();
             var queryType = $(document).find("select[name='query-type']").val();
-            $(document).find("#floatingBarsG").removeClass("hide");
+            $(document).find(".wrapper.loader").removeClass("hide");
             $.post("query", {
                     "query-content": queryContent,
                     "query-type": queryType
                 },
                 function(result) {
                     $(document).find("section#result").html(result);
-                    $(document).find("#floatingBarsG").addClass("hide");
+                    $(document).find(".wrapper.loader").addClass("hide");
                 }
             );
         }

@@ -1694,6 +1694,7 @@ body#home { text-align: center; }
 #home form#query-form { margin: 4em 0; }
 
 table.query-result thead tr th { font-weight: normal; }
+table.query-result tbody tr td { max-width: 140px; word-wrap: break-word; }
 
 #floatingBarsG { position: relative; width: 62px; height: 77px; margin-bottom: 3em; }
 
@@ -1725,3 +1726,5 @@ table.query-result thead tr th { font-weight: normal; }
   100% { background-color: #FFFFFF; } }
 @keyframes fadeG { 0% { background-color: #555555; }
   100% { background-color: #FFFFFF; } }
+.wrapper.loader { position: fixed; width: 100%; height: 100%; top: 0; bottom: 0; }
+.wrapper.loader > section { position: relative; top: 50%; }

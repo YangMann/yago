@@ -5,22 +5,22 @@ where to_tsvector('english',subject) @@ to_tsquery('english','einstein');
 
 2.
 select *
-from yagofacts
-where id='<id_1n54pv5_1ia_1m6hohe>';
+from yagofact
+where id='<id_8onowc_115_529y5y>';
 
 3.
 select *
-from yagofacts
+from yagotype
 where (subject='<yagoLegalActor>' or object='<yagoLegalActor>') and (predicate='rdfs:range' or predicate='rdfs:domain');
 
 4.
 select *
-from yagofacts
+from yagofact
 where subject='<Rimburg>' or object='<Rimburg>';
 
 5.
 select object
-from yagofacts
+from yagotype
 where subject='<Rimburg>' and predicate='rdf:type';
 
 6.

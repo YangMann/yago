@@ -105,8 +105,11 @@
     </section>
 </div>
 <div class="wrapper">
+    <section id="result" class="row"></section>
+</div>
+<div class="wrapper loader hide">
     <section class="row">
-        <div id="floatingBarsG" class="one column centered hide">
+        <div id="floatingBarsG" class="one column centered">
             <div class="blockG" id="rotateG_01">
             </div>
             <div class="blockG" id="rotateG_02">
@@ -125,7 +128,6 @@
             </div>
         </div>
     </section>
-    <section id="result" class="row"></section>
 </div>
 
 <!-- Grab Google CDN's jQuery, fall back to local if offline -->

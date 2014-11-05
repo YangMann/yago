@@ -67,7 +67,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
                     connection = DriverManager.getConnection(URL, USER, PASSWORD);
                     statement = connection.createStatement();
                     resultSet = statement.executeQuery("SELECT * " +
-                            "FROM yagofacts " +
+                            "FROM yagofact " +
                             "WHERE id='<" + content.replace("'", "''") + ">';");
                     int columnNum = resultSet.getMetaData().getColumnCount();
                     out.println("<table class='striped eight columns centered query-result'><caption>Result of ID <strong>"
@@ -88,7 +88,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 //                    System.out.println(resultSet.getString(1) + resultSet.getString(2));
                     }
                     resultSet = statement.executeQuery("SELECT * " +
-                            "FROM yagofacts " +
+                            "FROM yagofact " +
                             "WHERE id='" + content.replace("'", "''") + "';");
                     while (resultSet.next()) {
                         out.println("<tr><td>" + (++count) + "</td>");
@@ -126,13 +126,13 @@ public class Servlet extends javax.servlet.http.HttpServlet {
                     connection = DriverManager.getConnection(URL, USER, PASSWORD);
                     statement = connection.createStatement();
                     resultSet = statement.executeQuery("SELECT * " +
-                            "FROM yagofacts " +
+                            "FROM yagotype " +
                             "WHERE (subject='<" + content.replace("'", "''") + ">' OR object='<" + content.replace("'", "''") + ">') AND (predicate='rdfs:range' OR predicate='rdfs:domain');");
                     int columnNum = resultSet.getMetaData().getColumnCount();
                     out.println("<table class='striped eight columns centered query-result'><caption>Result of type <strong>"
                             + content + "</strong></caption><thead><tr><th>#</th>" +
-                            "<th>ID</th><th>Subject</th><th>Predicate</th>" +
-                            "<th>Object</th><th>Value</th></tr></thead><tbody>");
+                            "<th>Subject</th><th>Predicate</th>" +
+                            "<th>Object</th></tr></thead><tbody>");
                     long count = 0;
                     while (resultSet.next()) {
                         out.println("<tr><td>" + (++count) + "</td>");
@@ -147,7 +147,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 //                    System.out.println(resultSet.getString(1) + resultSet.getString(2));
                     }
                     resultSet = statement.executeQuery("SELECT * " +
-                            "FROM yagofacts " +
+                            "FROM yagotype " +
                             "WHERE (subject='" + content.replace("'", "''") + "' OR object='" + content.replace("'", "''") + "') AND (predicate='rdfs:range' OR predicate='rdfs:domain');");
                     while (resultSet.next()) {
                         out.println("<tr><td>" + (++count) + "</td>");
@@ -188,7 +188,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 //                            "from yagofacts " +
 //                            "where subject='<" + content.replace("'", "''") + ">' or object='<" + content.replace("'", "''") + ">';");
                     resultSet = statement.executeQuery("select * " +
-                            "from yagofacts " +
+                            "from yagofact " +
                             "where subject='<" + content.replace("'", "''") + ">' or object='<" + content.replace("'", "''") + ">';");
                     int columnNum = resultSet.getMetaData().getColumnCount();
                     out.println("<table class='striped eight columns centered query-result'>" +
@@ -210,7 +210,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 //                    System.out.println(resultSet.getString(1) + resultSet.getString(2));
                     }
                     resultSet = statement.executeQuery("select * " +
-                            "from yagofacts " +
+                            "from yagofact " +
                             "where subject='" + content.replace("'", "''") + "' or object='" + content.replace("'", "''") + "';");
                     while (resultSet.next()) {
                         out.println("<tr><td>" + (++count) + "</td>");
@@ -248,7 +248,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
                     connection = DriverManager.getConnection(URL, USER, PASSWORD);
                     statement = connection.createStatement();
                     resultSet = statement.executeQuery("select object " +
-                            "from yagofacts " +
+                            "from yagotype " +
                             "where subject='<" + content.replace("'", "''") + ">' and predicate='rdf:type';");
                     out.println("<table class='striped eight columns centered query-result'><thead><tr><th>#</th><th>Result of <strong>" + content + "</strong></th></tr></thead><tbody>");
                     long count = 0;
@@ -257,7 +257,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 //                    System.out.println(resultSet.getString(1));
                     }
                     resultSet = statement.executeQuery("select object " +
-                            "from yagofacts " +
+                            "from yagotype " +
                             "where subject='" + content.replace("'", "''") + "' and predicate='rdf:type';");
                     while (resultSet.next()) {
                         out.println("<tr><td>" + (++count) + "</td><td>" + resultSet.getString(1).replace("<", "").replace(">", "") + "</td></tr>");
