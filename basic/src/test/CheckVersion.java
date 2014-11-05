@@ -8,9 +8,9 @@ import java.sql.*;
  */
 public class CheckVersion {
 
-    private final static String URL = "jdbc:postgresql://localhost:5432/YAGO";
+    private final static String URL = "jdbc:postgresql://59.78.11.38:5432/yagodb";
     private final static String USER = "postgres";
-    private final static String PASSWORD = "19930311";
+    private final static String PASSWORD = "123";
 
     public static void main(String[] args) {
         Connection connection = null;

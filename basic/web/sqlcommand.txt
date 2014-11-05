@@ -1,0 +1,33 @@
+1.
+select * 
+from yagoentities
+where to_tsvector('english',subject) @@ to_tsquery('english','einstein');
+
+2.
+select *
+from yagofacts
+where id='<id_1n54pv5_1ia_1m6hohe>';
+
+3.
+select *
+from yagofacts
+where (subject='<yagoLegalActor>' or object='<yagoLegalActor>') and (predicate='rdfs:range' or predicate='rdfs:domain');
+
+4.
+select *
+from yagofacts
+where subject='<Rimburg>' or object='<Rimburg>';
+
+5.
+select object
+from yagofacts
+where subject='<Rimburg>' and predicate='rdf:type';
+
+6.
+select *
+from yagotime
+where subject='<id_1r28ncf_1ul_1vjg4px>';
+
+select *
+from yagoplace
+where subject='<id_1r28ncf_1ul_1vjg4px>';
