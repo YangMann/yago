@@ -64,7 +64,7 @@
         <nav class="eight columns pull_right">
             <ul id="main-nav">
                 <li><a href="#"><span>Features</span><i class="icon-archive" title="Features"></i></a></li>
-                <li><a href="#"><span>Examples</span><i class="icon-database" title="Examples"></i></a></li>
+                <li><a href="#" gumby-trigger="#drawer-examples" class="switch"><span>Examples</span><i class="icon-database" title="Examples"></i></a></li>
                 <li><a href="#"><span>About</span><i class="icon-users" title="About"></i></a></li>
             </ul>
         </nav>
@@ -105,6 +105,21 @@
     </section>
 </div>
 <div class="wrapper">
+    <div class="row">
+        <div class="four columns centered drawer" id="drawer-examples">
+            <a class="close switch active" gumby-trigger="|#drawer-examples"><i class="icon-cancel" title=".icon-cancel"></i></a>
+            <ol>
+                <li>jack</li>
+                <li>id_8onowc_115_529y5y</li>
+                <li>yagoLegalActor</li>
+                <li>Rimburg</li>
+                <li>Rimburg</li>
+                <li>id_1knwl1c_1xk_wxl0mf</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
     <section id="result" class="row"></section>
 </div>
 <div class="wrapper loader hide">
@@ -134,11 +149,11 @@
 <!-- 2.0 for modern browsers, 1.10 for .oldie -->
 <script>
     var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
-    if (!oldieCheck) {
-        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
-    } else {
-        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
-    }
+//    if (!oldieCheck) {
+//        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
+//    } else {
+//        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
+//    }
 </script>
 <script>
     if (!window.jQuery) {
